@@ -8,6 +8,8 @@ import CourseList from './EnrolledCourseList'
 import StudentDashboard from "./StudentDashboard";
 import AllCourseList from './AllCourseList';
 import StudentPayment from './StudentPayment'
+import TeacherRegistrationForm from './TeacherRegistrationForm'
+import TeacherApply from './TeacherApply'
 export default function Main() {
   return (
     <div>
@@ -27,8 +29,13 @@ export default function Main() {
                     <Route path="/list/student" element={<ListStudents/>}></Route>
                     <Route path="/student/details/:id" element={<StudentDetails/>}> </Route> */}
                 </Routes>
+                <Routes>
+                  
+                  <Route path="/registration" element={<TeacherRegistrationForm/>}></Route>
+                  <Route path="/apply" element={<TeacherApply/>}></Route>
+                </Routes>
             </BrowserRouter>
-            <Footer/>
+            {/* <Footer/> */}
     </div>
   )
 }
