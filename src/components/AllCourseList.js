@@ -1,3 +1,4 @@
+//View all the courses available in this platform
 import React from "react";
 import { useState, useEffect } from "react";
 import AxiosConfig from "../components/AxiosConfig";
@@ -36,7 +37,8 @@ export default function AllCourseList() {
         {courses.map((st) => (
           <CourseItem
             name={st.name}
-            description={st.description}
+            category={st.category}
+            // tname={st.tname}
             price={st.price}
             crsid={st.course_id}
           />

@@ -6,6 +6,7 @@ import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Error from "./Errors";
+import { Link } from "react-router-dom";
 export default function LoginForm() {
   const nav = useNavigate();
   const [email, setEmail] = useState("");
@@ -50,6 +51,7 @@ export default function LoginForm() {
             localStorage.setItem("_userid", rsp.data.accid);
             localStorage.setItem("_stdid", rsp.data.stdid);
             localStorage.setItem("_stdname", rsp.data.stdname);
+            localStorage.setItem("_islogged", true);
             nav("/student/dashboard");
           }
           if (rsp.status == 403) {
@@ -109,7 +111,12 @@ export default function LoginForm() {
               </span>
             )}
           </span>
-          <button type="submit">Login</button>
+          <span style={{display:"inline"}}>
+            <button type="submit">Login</button>
+            <Link to='/student/register'>
+            <p style={{display:"inline",marginLeft:"5px"}}>Don't have an account?</p>
+            </Link>
+          </span>
         </form>
       </div>
     </div>
