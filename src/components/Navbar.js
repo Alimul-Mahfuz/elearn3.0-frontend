@@ -2,7 +2,7 @@ import React from 'react';
 import '../assets/css/style.css';
 import '../assets/css/bootstrap.css';
 
-export default function Navbar() {
+export default function Navbar(props) {
   return (
     <div className='navbar-container'>
         <div className="navbar">

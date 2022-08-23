@@ -30,8 +30,8 @@
   font-size: 10pt;
 }
 .form-login {
-  /* background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);  */
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   /*background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);*/
+   /*W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+*/
   /*background-image: url("../images/bg02.jpg");*/
   background-size: cover;
   /*position: relative;*/

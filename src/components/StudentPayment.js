@@ -4,29 +4,32 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useSearchParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 export default function StudentPayment() {
     const inputstyle={
         width:"400px",
 
     };
-    const [searchParams] = useSearchParams();
-    console.log(searchParams);
+    const {sid,csid}=useParams();
+    // console.log(typeof sid);
     const [cardno,setCardno]=useState("");
     const [cvc,setCvc]=useState("");
     const nav = useNavigate();
+    const payapiurl='/student/enroll/payment'.concat('/').concat(sid.valueOf()).concat('/').concat(csid.valueOf());
+    // console.log(payapiurl);
     const paymenthandeler=(e)=>{
         e.preventDefault()
         var data = { cardno: cardno, cvc: cvc }
-        AxiosConfig.post('/student/enroll/payment/{sid}/{csid}', data).then(
+        AxiosConfig.post(payapiurl, data).then(
             (rsp) => {
-              if (rsp.data.id != 0 && rsp.data.type==3) {
+              if (rsp.status==200) {
                 nav("/student/dashboard");
               }
-              if (rsp.status == 403) {
+              if (rsp.status == 502) {
                 nav("/");
               }
+              //   console.log(rsp.data);
             },
             (er) => {
               if (er.response.status == 422) {

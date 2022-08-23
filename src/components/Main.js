@@ -8,11 +8,18 @@ import CourseList from './EnrolledCourseList'
 import StudentDashboard from "./StudentDashboard";
 import AllCourseList from './AllCourseList';
 import StudentPayment from './StudentPayment'
+import CourseDashboard from './CourseDashboard'
+import LogNavbar from './student/LogNavbar'
 export default function Main() {
+  var islog=localStorage.getItem('_islogged')
+  // console.log(islog)
   return (
     <div>
  <BrowserRouter>
+                {console.log(islog)}
+                <div>{islog ? console.log("HI"):console.log("bye")}</div>
                 <Navbar/>
+
                 <Routes>
                     <Route path="/" element={<LoginForm/>}></Route>
                     <Route path="/login" element={<LoginForm/>}></Route>
@@ -20,6 +27,10 @@ export default function Main() {
                     <Route path="/all/course" element={<AllCourseList/>}></Route>
                     <Route path="/student/dashboard" element={<StudentDashboard/>}></Route>
                     <Route path="/student/payment/:sid/:csid" element={<StudentPayment/>}></Route>
+                    <Route path="/student/register" element={<StdregForm/>}></Route>
+                    <Route path="/course/dashboard/:enrid/:csid" element={<CourseDashboard/>}></Route>
+                    <Route path="/course/dashboard/:enrid/:csid" element={<CourseDashboard/>}></Route>
+                    
                     {/* <Route path="/paragraph" element={<Paragraph/>}></Route>
                     <Route path="/event" element={<EventHandle/>}></Route>
                     <Route path="/post" element={<Post/>}></Route>
