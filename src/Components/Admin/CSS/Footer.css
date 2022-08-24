@@ -1,0 +1,14 @@
+.text-center {
+  text-align: center;
+  background-color: brown;
+  padding: 3%;
+  font-style: italic;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+}
+
+
+
