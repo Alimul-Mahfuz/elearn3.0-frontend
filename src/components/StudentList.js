@@ -3,13 +3,12 @@ import {useState,useEffect} from 'react';
 import AxiosConfig from './AxiosConfig';
 import {Link} from 'react-router-dom';
 import "../assets/css/applystyles.css";
-import TeacherNavbar from "./TeacherNavbar";
 
-const TstudentList = () => {
-    const[teacher,setTeacher] = useState([]);
+const StudentList = () => {
+    const[student,setStudent] = useState([]);
     useEffect(()=>{
-        AxiosConfig.get("/showteacher").then((rsp)=>{
-        setTeacher(rsp.data);
+        AxiosConfig.get("/showstudent").then((rsp)=>{
+        setStudent(rsp.data);
         },(er)=>{
 
         })
@@ -17,30 +16,22 @@ const TstudentList = () => {
     },[]);
   return (
 <div>
-<TeacherNavbar/>
   <br/>
   <br/><br/>
-  
   <h1>Teacher List</h1>
       <table border="5">
         <tr>
-          <th>Teacher Id</th>
-          <th>Teacher Name</th>
+          <th>Student Name</th>
           <th>Email</th>
           <th>Phone</th>
-          <th>DOB</th>
-          {/* <th>Gender</th> */}
           <th>Address</th>
         </tr>
-        {teacher.map((t) => {
+        {student.map((t) => {
           return (
-            <tr key={t.t_id}>
-              <td>{t.t_id}</td>
+            <tr key={t.student_id}>
               <td>{t.name}</td>
               <td>{t.email}</td>
               <td>{t.phone}</td>
-              <td>{t.dob}</td>
-              {/* <td>{t.gender}</td> */}
               <td>{t.address}</td>
               {/* <td>
                 <button type="button-green">
@@ -55,4 +46,4 @@ const TstudentList = () => {
   )
 }
 
-export default TstudentList
+export default StudentList

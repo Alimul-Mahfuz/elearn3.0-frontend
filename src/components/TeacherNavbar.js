@@ -12,14 +12,15 @@ export default function Navbar() {
             }} href="/">E-Learning</a></h3>
             <nav className='nav'>
                 <ul>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="/all/course">Courses</a></li>
-                    <li><a href="#">Contacts</a></li>
-                    <li><a href="#">Opportunity</a></li>
-
+                    <li><a href="/teacher/dashboard">Home</a></li>
+                    {/* <li><a href="/all/course">Courses</a></li> */}
+                    <li><a href="#">Message</a></li>
+                    <li><a href="/showteacher">Teacher List</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="/teacher/myprofile">My Profile</a></li>
+                    {/* <li><a href="/teacher/create">Teacher Registration</a></li> */}
                     <li><a href="/login">Log Out</a></li>
-                    <li><a href="/teacher/create">Teacher Registration</a></li>
-                    <li ><a href="/apply"><button
+                    {/* <li ><a href="/apply"><button
                     style={{
                       backgroundColor: "#1363DF",
                       padding:"5px",
@@ -27,7 +28,7 @@ export default function Navbar() {
                       borderRadius:"10px",
     
                     }}
-                    >Apply Now</button></a></li>
+                    >Apply Now</button></a></li> */}
                 </ul>
             </nav>
         </div>

@@ -15,7 +15,9 @@ import CourseDashboard from './CourseDashboard'
 import LogNavbar from './student/LogNavbar'
 import TeacherDashboard from './TeacherDashboard';
 import TstudentList from './TstudentList'
+import StudentList from './StudentList'
 import StudentDetails from './StudentDetails';
+import TeacherProfile from './TeacherProfile'
 export default function Main() {
   var islog=localStorage.getItem('_islogged')
   // console.log(islog)
@@ -43,6 +45,8 @@ export default function Main() {
                     <Route path="/apply" element={<TeacherApply/>}></Route>
                     <Route path="/teacher/dashboard" element={<TeacherDashboard/>}></Route>
                     <Route path="/showteacher" element={<TstudentList/>}></Route>
+                    <Route path="/showstudent" element={<StudentList/>}></Route>
+                    <Route path="/teacher/myprofile" element={<TeacherProfile/>}></Route>
 
                     
                     {/* <Route path="/paragraph" element={<Paragraph/>}></Route>
