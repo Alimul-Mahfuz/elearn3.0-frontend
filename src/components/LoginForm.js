@@ -54,6 +54,14 @@ export default function LoginForm() {
             localStorage.setItem("_islogged", true);
             nav("/student/dashboard");
           }
+          if (rsp.data.id != 0 && rsp.data.type==2) {
+            localStorage.setItem("_authToken", rsp.data.token);
+            localStorage.setItem("_userid", rsp.data.accid);
+            localStorage.setItem("_tid", rsp.data.tid);
+            localStorage.setItem("_tname", rsp.data.tname);
+            localStorage.setItem("_islogged", true);
+            nav("/teacher/dashboard");
+          }
           if (rsp.status == 403) {
             nav("/");
           }

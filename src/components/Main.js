@@ -10,10 +10,12 @@ import AllCourseList from './AllCourseList';
 import StudentPayment from './StudentPayment';
 import TeacherRegistrationForm from './TeacherRegistrationForm';
 import TeacherApply from './TeacherApply';
-import TeacherNavbar from './TeacherNavbar';
 import RegistrationNumber from './RegistrationNumber';
 import CourseDashboard from './CourseDashboard'
 import LogNavbar from './student/LogNavbar'
+import TeacherDashboard from './TeacherDashboard';
+import TstudentList from './TstudentList'
+import StudentDetails from './StudentDetails';
 export default function Main() {
   var islog=localStorage.getItem('_islogged')
   // console.log(islog)
@@ -31,10 +33,17 @@ export default function Main() {
                     <Route path="/all/course" element={<AllCourseList/>}></Route>
                     <Route path="/student/dashboard" element={<StudentDashboard/>}></Route>
                     <Route path="/student/payment/:sid/:csid" element={<StudentPayment/>}></Route>
-                    <Route path="/teacher" element={<RegistrationNumber/>}></Route>
+                    {/* <Route path="/teacher" element={<RegistrationNumber/>}></Route> */}
                     <Route path="/student/register" element={<StdregForm/>}></Route>
                     <Route path="/course/dashboard/:enrid/:csid" element={<CourseDashboard/>}></Route>
                     <Route path="/course/dashboard/:enrid/:csid" element={<CourseDashboard/>}></Route>
+
+                    {/* Teacher */}
+                    <Route path="/teacher/create" element={<TeacherRegistrationForm/>}></Route>
+                    <Route path="/apply" element={<TeacherApply/>}></Route>
+                    <Route path="/teacher/dashboard" element={<TeacherDashboard/>}></Route>
+                    <Route path="/showteacher" element={<TstudentList/>}></Route>
+
                     
                     {/* <Route path="/paragraph" element={<Paragraph/>}></Route>
                     <Route path="/event" element={<EventHandle/>}></Route>
@@ -43,10 +52,11 @@ export default function Main() {
                     <Route path="/list/student" element={<ListStudents/>}></Route>
                     <Route path="/student/details/:id" element={<StudentDetails/>}> </Route> */}
                 </Routes>
-                <Routes>
-                <Route path="/teacher/create" element={<TeacherRegistrationForm/>}></Route>
-                <Route path="/apply" element={<TeacherApply/>}></Route>
-                </Routes>
+                
+                
+
+                
+          
                 
                
                 

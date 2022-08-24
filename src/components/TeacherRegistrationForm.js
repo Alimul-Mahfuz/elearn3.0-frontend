@@ -35,7 +35,7 @@ const TeacherRegistrationForm = () => {
     axios.post("http://localhost:8000/api/teacher/create",data).then(
       (rsp) => {
         setMsg(rsp.data.msg);
-        nav("/Login");
+        nav("/login");
       },
       (er) => {
         setErr(er.response.data);

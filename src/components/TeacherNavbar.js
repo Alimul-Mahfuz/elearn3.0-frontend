@@ -17,7 +17,7 @@ export default function Navbar() {
                     <li><a href="#">Contacts</a></li>
                     <li><a href="#">Opportunity</a></li>
 
-                    <li><a href="/login">Teacher Login</a></li>
+                    <li><a href="/login">Log Out</a></li>
                     <li><a href="/teacher/create">Teacher Registration</a></li>
                     <li ><a href="/apply"><button
                     style={{

@@ -3,6 +3,7 @@ import "../assets/css/applystyles.css";
 import Button from 'react-bootstrap/Button';
 import { useState } from "react";
 import axios from "axios";
+import AxiosConfig from './AxiosConfig';
 
 const TeacherApply = () => {
  const [fullname, setFullname] = useState("");
@@ -12,18 +13,14 @@ const TeacherApply = () => {
   const [msg, setMsg] = useState("");
   const upload=(event)=>{
     event.preventDefault();
-    var data = {
-      fullname: fullname,
-      email: email};
+    var data = new FormData();
+	data.append("file",mfile,mfile.name);
+        AxiosConfig.post("file",data).then((rsp)=>{
+            
+        },(er)=>{
+            
+        });
     
-      axios.post("http://localhost:8000/api/teacher/create",data).then(
-      (rsp) => {
-        setMsg(rsp.data.msg);
-      },
-      (er) => {
-        setErr(er.response.data);
-      }
-    )
   }
   return (
     <div className="form" style={{height: "340px"}}>
@@ -72,7 +69,7 @@ const TeacherApply = () => {
           <input
             className="form__input"
             type="file"
-            name="image"
+            name=""
             placeholder="Upload CV"  onChange={(e)=>{setFile(e.target.files[0])}}
           />
           <br/>

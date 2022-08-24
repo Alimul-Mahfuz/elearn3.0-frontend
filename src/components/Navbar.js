@@ -18,7 +18,7 @@ export default function Navbar(props) {
                     <li><a href="#">Opportunity</a></li>
 
                     <li><a href="/login">Login</a></li>
-                    <li><a href="/teacher">Teacher Registration</a></li>
+                    <li><a href="/teacher/create">Teacher Registration</a></li>
                     <li ><a href="/register"><button
                     style={{
                       backgroundColor: "#1363DF",
