@@ -17,18 +17,8 @@ export default function Navbar() {
                     <li><a href="#">Contacts</a></li>
                     <li><a href="#">Opportunity</a></li>
 
-                    <li><a href="/login">Login</a></li>
-                    <li><a href="/teacher">Teacher Registration</a></li>
-                    <li ><a href="/register"><button
-                    style={{
-                      backgroundColor: "#1363DF",
-                      padding:"5px",
-                      color:"white",
-                      borderRadius:"10px",
-
-    
-                    }}
-                    >Join Now</button></a></li>
+                    <li><a href="/login">Teacher Login</a></li>
+                    <li><a href="/teacher/create">Teacher Registration</a></li>
                     <li ><a href="/apply"><button
                     style={{
                       backgroundColor: "#1363DF",

@@ -7,9 +7,11 @@ import {BrowserRouter,Route,Routes} from 'react-router-dom';
 import CourseList from './EnrolledCourseList'
 import StudentDashboard from "./StudentDashboard";
 import AllCourseList from './AllCourseList';
-import StudentPayment from './StudentPayment'
-import TeacherRegistrationForm from './TeacherRegistrationForm'
-import TeacherApply from './TeacherApply'
+import StudentPayment from './StudentPayment';
+import TeacherRegistrationForm from './TeacherRegistrationForm';
+import TeacherApply from './TeacherApply';
+import TeacherNavbar from './TeacherNavbar';
+import RegistrationNumber from './RegistrationNumber';
 export default function Main() {
   return (
     <div>
@@ -22,6 +24,7 @@ export default function Main() {
                     <Route path="/all/course" element={<AllCourseList/>}></Route>
                     <Route path="/student/dashboard" element={<StudentDashboard/>}></Route>
                     <Route path="/student/payment/:sid/:csid" element={<StudentPayment/>}></Route>
+                    <Route path="/teacher" element={<RegistrationNumber/>}></Route>
                     {/* <Route path="/paragraph" element={<Paragraph/>}></Route>
                     <Route path="/event" element={<EventHandle/>}></Route>
                     <Route path="/post" element={<Post/>}></Route>
@@ -30,12 +33,15 @@ export default function Main() {
                     <Route path="/student/details/:id" element={<StudentDetails/>}> </Route> */}
                 </Routes>
                 <Routes>
-                  
-                  <Route path="/registration" element={<TeacherRegistrationForm/>}></Route>
-                  <Route path="/apply" element={<TeacherApply/>}></Route>
+                <Route path="/teacher/create" element={<TeacherRegistrationForm/>}></Route>
+                <Route path="/apply" element={<TeacherApply/>}></Route>
                 </Routes>
+                
+               
+                
             </BrowserRouter>
             {/* <Footer/> */}
+            
     </div>
   )
 }
