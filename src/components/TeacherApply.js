@@ -72,7 +72,7 @@ const TeacherApply = () => {
           <input
             className="form__input"
             type="file"
-            id="cv"
+            name="image"
             placeholder="Upload CV"  onChange={(e)=>{setFile(e.target.files[0])}}
           />
           <br/>

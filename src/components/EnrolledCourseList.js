@@ -26,6 +26,9 @@ export default function EnrolledCourseList(props) {
             name={st.coursename}
             duration={st.description}
             tname={st.tname}
+            enid={st.enrid}
+            csid={st.csid}
+
           />
         ))}
       </div>
