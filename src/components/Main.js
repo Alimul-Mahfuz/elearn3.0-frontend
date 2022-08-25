@@ -45,8 +45,9 @@ export default function Main() {
                     <Route path="/apply" element={<TeacherApply/>}></Route>
                     <Route path="/teacher/dashboard" element={<TeacherDashboard/>}></Route>
                     <Route path="/showteacher" element={<TstudentList/>}></Route>
-                    <Route path="/showstudent" element={<StudentList/>}></Route>
+                    <Route path="/showstudent/:csdd" element={<StudentList/>}></Route>
                     <Route path="/teacher/myprofile" element={<TeacherProfile/>}></Route>
+                    {/* <Route path="/teacher/myprofile" element={<TeacherProfile/>}></Route> */}
 
                     
                     {/* <Route path="/paragraph" element={<Paragraph/>}></Route>

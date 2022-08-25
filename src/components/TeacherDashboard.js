@@ -45,10 +45,11 @@ export default function TeacherDashboard(props) {
           return (
             <tr>
               <td>{t.name}</td>
-              <td>{t.description}</td>
+              <td>{t.description}</td>       
               <td>
                 <div>
-                  <Link to={`/showstudent`}>
+                  <Link to={`/showstudent/${t.course_id}
+                  `}>
                     <div>
                       <button
                         style={{
